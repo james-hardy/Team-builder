@@ -4,10 +4,12 @@ const path = require("path");
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
+const Engineer = require('./lib/engineer');
 
 const managers = [];
 const engineers = [];
 const interns = [];
+const employees = [];
 
 const questions = [
     {
@@ -17,24 +19,24 @@ const questions = [
         choices:
             [
                 "Manager",
-                "Enginner",
+                "Engineer",
                 "Intern",
             ]
     },
     {
         type: "input",
         name: "name",
-        message: "What is your employee's name?"
+        message: "What is your employee's name?",
     },
     {
         type: "input",
         name: "id",
-        message: "What is your ID?"
+        message: "What is your ID?",
     },
     {
         type: "input",
         name: "email",
-        message: "What is your email?"
+        message: "What is your email?",
     },
     {
         type: 'input',
@@ -57,7 +59,7 @@ const questions = [
     {
         type: 'confirm',
         name: 'adding',
-        message: "Would you like to add another employee?"
+        message: "Would you like to add another employee?",
     },
 ]
 function test() {
@@ -67,9 +69,9 @@ function test() {
             managers.push(new Manager(data.name, data.id, data.email, data.officenumber));
             console.log(managers);
         } else if ((data.role).includes('Engineer')) {
-            engineers.push(new Engineer(name, id, email, github));
+            engineers.push(new Engineer(data.name, data.id, data.email, data.github));
         } else {
-            interns.push(new Intern(name, id, email, school));
+            interns.push(new Intern(data.name, data.id, data.email, data.school));
         }
         if (data.adding === true) {
             test();
@@ -77,5 +79,11 @@ function test() {
     });
 }
 test()
+
+
+
+
+
+
 
 
