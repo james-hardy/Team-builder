@@ -14,9 +14,9 @@
 # Description:
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-* Dynamically create a team reference web page
+* Dynamically create and build your team reference web page
 * Click on the link below to view a video demonstration
--[Video Demonstration](https://drive.google.com/drive/folders/1P8ao8Li-DIhJE9TL0AjaDr1lyt1zaJaO)
+-[Video Demonstration](https://drive.google.com/file/d/1T3FjzL-sLK5-4wxDp6clelDyB9La03Zs/view)
 
 # Installation:
 
