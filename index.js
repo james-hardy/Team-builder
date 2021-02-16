@@ -1,10 +1,12 @@
-const inquirer = require('inquirer');
 const fs = require('fs');
+const inquirer = require('inquirer');
 const path = require("path");
+const generateHTML = require('./templates/generatehtml');
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
 const Engineer = require('./lib/engineer');
+
 
 const managers = [];
 const engineers = [];
@@ -13,7 +15,7 @@ const employees = [];
 
 const questions = [
     {
-        type: "checkbox",
+        type: "list",
         name: "role",
         message: "What is your employee's role?",
         choices:
@@ -60,30 +62,30 @@ const questions = [
         type: 'confirm',
         name: 'adding',
         message: "Would you like to add another employee?",
-    },
-]
-function test() {
+    }
+];
+function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(data);
         if ((data.role).includes('Manager')) {
-            managers.push(new Manager(data.name, data.id, data.email, data.officenumber));
+            const newManager = new Manager(data.name, data.id, data.email, data.officenumber);
+            managers.push(newManager);
             console.log(managers);
         } else if ((data.role).includes('Engineer')) {
             engineers.push(new Engineer(data.name, data.id, data.email, data.github));
+            console.log(engineers)
         } else {
             interns.push(new Intern(data.name, data.id, data.email, data.school));
+            console.log(interns);
         }
         if (data.adding === true) {
-            test();
+            init();
         }
+        // function writeToFile (fileName, data) {
+        //     return fs.writeFile(path.join(process.cwd(),fileName), data);
+        // }
+        fs.writeFile('index.html', generateHTML(managers, engineers, interns), (err) => 
+        err ? console.log(err) : console.log("it worked! Thank God"));
     });
-}
-test()
-
-
-
-
-
-
-
-
+};
+init()
