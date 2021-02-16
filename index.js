@@ -60,7 +60,7 @@ const questions = [
     },
     {
         type: 'confirm',
-        name: 'adding',
+        name: 'add',
         message: "Would you like to add another employee?",
     }
 ];
@@ -68,8 +68,7 @@ function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(data);
         if ((data.role).includes('Manager')) {
-            const newManager = new Manager(data.name, data.id, data.email, data.officenumber);
-            managers.push(newManager);
+            managers.push(new Manager(data.name, data.id, data.email, data.officenumber));
             console.log(managers);
         } else if ((data.role).includes('Engineer')) {
             engineers.push(new Engineer(data.name, data.id, data.email, data.github));
@@ -78,12 +77,10 @@ function init() {
             interns.push(new Intern(data.name, data.id, data.email, data.school));
             console.log(interns);
         }
-        if (data.adding === true) {
+        if (data.add === true) {
             init();
         }
-        // function writeToFile (fileName, data) {
-        //     return fs.writeFile(path.join(process.cwd(),fileName), data);
-        // }
+        
         fs.writeFile('index.html', generateHTML(managers, engineers, interns), (err) => 
         err ? console.log(err) : console.log("it worked! Thank God"));
     });

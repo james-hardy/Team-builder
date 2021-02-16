@@ -3,13 +3,13 @@ function getManagers(managers) {
     for (let i = 0; i < managers.length; i++) {
         alltheManagers = alltheManagers.concat(`
     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="icons/manager-icon.png" class="card-img-top" alt="manager icon">
   <div class="card-body">
     <h5 class="card-title">Manager</h5>
-    <h3 class="card-text">${managers[i].name}.</h3>
-    <p class="card-text">${managers[i].id}.</p>
-    <p class="card-text">${managers[i].email}.</p>
-    <p class="card-text">${managers[i].officenumber}.</p>
+    <h3 class="card-text">Name: ${managers[i].name}.</h3>
+    <p class="card-text">ID: ${managers[i].id}.</p>
+    <p class="card-text">Email: ${managers[i].email}.</p>
+    <p class="card-text">Office Number ${managers[i].officenumber}.</p>
   </div>
 </div>
     `)
@@ -22,13 +22,13 @@ function getEngineers(engineers) {
     for (let i = 0; i < engineers.length; i++) {
         alltheEngineers = alltheEngineers.concat(`
     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="icons/engineer-icon.png" class="card-img-top" alt="engineer icon">
   <div class="card-body">
-    <h5 class="card-title">Manager</h5>
-    <h3 class="card-text">${engineers[i].name}.</h3>
-    <p class="card-text">${engineers[i].id}.</p>
-    <p class="card-text">${engineers[i].email}.</p>
-    <p class="card-text">${engineers[i].github}.</p>
+    <h5 class="card-title">Engineer</h5>
+    <h3 class="card-text">Name: ${engineers[i].name}.</h3>
+    <p class="card-text">ID: ${engineers[i].id}.</p>
+    <p class="card-text">Email: ${engineers[i].email}.</p>
+    <p class="card-text">GitHub: ${engineers[i].github}.</p>
   </div>
 </div>
     `)
@@ -42,13 +42,13 @@ function getInterns(interns) {
     for (let i = 0; i < interns.length; i++) {
         alltheInterns = alltheInterns.concat(`
     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="icons/intern-icon.png" class="card-img-top" alt="intern icon">
   <div class="card-body">
-    <h5 class="card-title">Manager</h5>
-    <h3 class="card-text">${interns[i].name}.</h3>
-    <p class="card-text">${interns[i].id}.</p>
-    <p class="card-text">${interns[i].email}.</p>
-    <p class="card-text">${interns[i].school}.</p>
+    <h5 class="card-title">Intern</h5>
+    <h3 class="card-text">Name: ${interns[i].name}.</h3>
+    <p class="card-text">ID: ${interns[i].id}.</p>
+    <p class="card-text">Email: ${interns[i].email}.</p>
+    <p class="card-text">School: ${interns[i].school}.</p>
   </div>
 </div>
     `)
@@ -100,11 +100,11 @@ function generateHTML(managers, engineers, interns) {
         </div>
     </div>
 
-    // <!-- Link to bootstrap -->
+    <!-- Link to bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-    // <!-- Link to js -->
+    <!-- Link to js -->
     <script rel="textjavascript" src="index.js"></script>
 </body>
 
