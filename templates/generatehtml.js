@@ -8,8 +8,9 @@ function getManagers(managers) {
     <h5 class="card-title">Manager</h5>
     <h3 class="card-text">Name: ${managers[i].name}.</h3>
     <p class="card-text">ID: ${managers[i].id}.</p>
-    <p class="card-text">Email: ${managers[i].email}.</p>
-    <p class="card-text">Office Number ${managers[i].officenumber}.</p>
+    <a href="mailto:${managers[i].email}">${managers[i].name}'s Email: ${managers[i].email}.</a>
+    <br>
+    <p class="card-text">${managers[i].name}'s Office Number ${managers[i].officenumber}.</p>
   </div>
 </div>
     `)
@@ -27,8 +28,9 @@ function getEngineers(engineers) {
     <h5 class="card-title">Engineer</h5>
     <h3 class="card-text">Name: ${engineers[i].name}.</h3>
     <p class="card-text">ID: ${engineers[i].id}.</p>
-    <p class="card-text">Email: ${engineers[i].email}.</p>
-    <p class="card-text">GitHub: ${engineers[i].github}.</p>
+    <a href="mailto:${engineers[i].email}">${engineers[i].name}'s Email: ${engineers[i].email}.</a>
+    <br>
+    <a href="https://github.com/${engineers[i].github}" target="_blank"">${engineers[i].name}'s GitHub: ${engineers[i].github}</a>
   </div>
 </div>
     `)
@@ -47,8 +49,9 @@ function getInterns(interns) {
     <h5 class="card-title">Intern</h5>
     <h3 class="card-text">Name: ${interns[i].name}.</h3>
     <p class="card-text">ID: ${interns[i].id}.</p>
-    <p class="card-text">Email: ${interns[i].email}.</p>
-    <p class="card-text">School: ${interns[i].school}.</p>
+    <a href="mailto:${interns[i].email}">${interns[i].name}'s Email: ${interns[i].email}.</a>
+    <br>
+    <p class="card-text">School:${interns[i].name}'s ${interns[i].school}.</p>
   </div>
 </div>
     `)
